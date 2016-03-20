@@ -1,0 +1,324 @@
+/* --- TABLE OF CONTENTS --- */
+/*
+
+1. Scroll effects on header
+2. Main components for the off canvas menu
+3. Responsive tweaks
+
+/* --- TABLE OF CONTENTS --- */
+
+
+  /* 
+  ==========================================================================
+  1. Scroll effects on header
+  ========================================================================== 
+  */
+
+  body #header-wrap.smaller {
+    background-color: #FFF;
+    border-bottom: 1px solid rgba(29, 29, 29, .1);
+  }
+
+    body #header-wrap.smaller .logo, 
+    body #header-wrap.smaller #nav-expander, 
+    body #header-wrap.smaller .pixova-menu-text {
+      color: #000;
+    }
+      body #header-wrap.smaller .pixova-menu-icon {background-color: #000;}
+      .smaller #nav-expander.is-clicked .pixova-menu-icon {background-color: rgba(255,255,255,0);}
+      .smaller #nav-expander.is-clicked .pixova-menu-icon::before, 
+      .smaller #nav-expander.is-clicked .pixova-menu-icon::after,
+      .smaller #nav-expander.is-clicked .pixova-menu-icon::before, 
+      .smaller #nav-expander.is-clicked .pixova-menu-icon::after {
+          color: #000; 
+          background-color: #000;
+      }
+
+
+     header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 75px;
+      width: 100%;
+      background: #4e6361;
+      z-index: 3;
+      /* Force Hardware Acceleration in WebKit */
+      -webkit-transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      -webkit-transition-property: -webkit-transform;
+      -moz-transition-property: -moz-transform;
+      transition-property: transform;
+      -webkit-transition-duration: 0.4s;
+      -moz-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+    }
+    
+    header.lateral-menu-is-open {
+      /* translate to show the lateral menu */
+      -webkit-transform: translateX(-260px);
+      -moz-transform: translateX(-260px);
+      -ms-transform: translateX(-260px);
+      -o-transform: translateX(-260px);
+      transform: translateX(-260px);
+    }
+
+    header.is-fixed {
+      position: fixed;
+    } 
+
+
+    .expandedNav {
+      width: 100%;
+      padding-left: 3%;
+      padding-right: 3%;
+  }
+
+  /* 
+  ==========================================================================
+  1. Main components for the off canvas menu
+  ========================================================================== 
+  */
+
+
+  #container {
+    /* set a min-height and a z-index to be sure that the main element completely covers the lateral menu */
+    min-height: 100%;
+    position: relative;
+    z-index: 2;
+
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.4s;
+    -moz-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+  }
+  #container.lateral-menu-is-open {
+    /* translate to show the lateral menu - all content needs to be put in the #container to translate*/
+    -webkit-transform: translateX(-260px);
+    -moz-transform: translateX(-260px);
+    -ms-transform: translateX(-260px);
+    -o-transform: translateX(-260px);
+    transform: translateX(-260px);
+  }
+
+  #nav-expander {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+  }
+
+  #nav-expander .pixova-menu-text {
+    height: 100%;
+    text-transform: uppercase;
+    color: #FFF;
+    font-weight: 600;
+    display: none;
+  }
+  #nav-expander .pixova-menu-icon {
+    /* this span is the central line in the menu menu */
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    bottom: auto;
+    right: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 18px;
+    height: 2px;
+    background-color: #FFF;
+    /* these are the upper and lower lines in the menu menu */
+  }
+  #nav-expander .pixova-menu-icon::before, #nav-expander .pixova-menu-icon:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: inherit;
+    left: 0;
+  }
+  #nav-expander .pixova-menu-icon::before {
+    bottom: 5px;
+  }
+  #nav-expander .pixova-menu-icon::after {
+    top: 5px;
+  }
+  #nav-expander.is-clicked .pixova-menu-icon {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  #nav-expander.is-clicked .pixova-menu-icon::before, #nav-expander.is-clicked .pixova-menu-icon::after {
+    background-color: white;
+  }
+  #nav-expander.is-clicked .pixova-menu-icon::before {
+    bottom: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  #nav-expander.is-clicked .pixova-menu-icon::after {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+
+  #pixova-lateral-nav {
+    font-family: 'Muli';
+    position: fixed;
+    height: 100%;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    /* the secondary navigation is covered by the main element */
+    z-index: 999;
+    width: 260px;
+    background-color: #FFF;
+    border-left: 1px solid #EEE;
+    overflow-y: auto;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -webkit-transition: -webkit-transform .4s 0s, visibility 0s .4s;
+    -moz-transition: -moz-transform .4s 0s, visibility 0s .4s;
+    transition: transform .4s 0s, visibility 0s .4s;
+    /* this creates the subtle slide in animation of the navigation */
+    -webkit-transform: translateX(165px);
+    -moz-transform: translateX(165px);
+    -ms-transform: translateX(165px);
+    -o-transform: translateX(165px);
+    transform: translateX(165px);
+  }
+  #pixova-lateral-nav .pixova-navigation {
+    margin: 10px 0 16px;
+  }
+  #pixova-lateral-nav .sub-menu {
+    padding: 0 10px 20px 15px;
+    display: none;
+  }
+  #pixova-lateral-nav a {
+    display: block;
+    line-height: 2em;
+    padding: 0 16px 0 32px;
+    color: #1d1d1d;
+    outline: none !important;
+  }
+  #pixova-lateral-nav a.current {
+    background-color: #1d1d1d;
+    color: #FFF;
+  }
+  .no-touch #pixova-lateral-nav a:hover {
+    color: #FFF;
+  }
+
+  #pixova-lateral-nav.lateral-menu-is-open {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    visibility: visible;
+    -webkit-transition: -webkit-transform .4s 0s, visibility 0s 0s;
+    -moz-transition: -moz-transform .4s 0s, visibility 0s 0s;
+    transition: transform .4s 0s, visibility 0s 0s;
+    /* smooth the scrolling on touch devices - webkit browsers */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #pixova-lateral-nav .item-has-children {
+    border-bottom: 1px solid #EEE;
+    margin: 15px 0;
+  }
+
+  #pixova-lateral-nav .sub-menu  a:hover {
+    background-color: #1d1d1d;
+    color: #FFF;
+  }
+
+  /* style menu items which have a submenu  */
+  #pixova-lateral-nav .item-has-children > a {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 600;
+    /* this is the right arrow to show that the item has a submenu  */
+  }
+  #pixova-lateral-nav .item-has-children > a::after {
+    content: '';
+    color: #000;
+    display: block;
+    height: 11px;
+    width: 8px;
+    position: absolute;
+    top: 50%;
+    bottom: auto;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 1em;
+    background: url("../images/pixova-arrow.html") no-repeat center center;
+    background-size: 8px 11px;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+  }
+  #pixova-lateral-nav .item-has-children > a.submenu-open::after {
+    -webkit-transform: translateY(-50%) rotate(90deg);
+    -moz-transform: translateY(-50%) rotate(90deg);
+    -ms-transform: translateY(-50%) rotate(90deg);
+    -o-transform: translateY(-50%) rotate(90deg);
+    transform: translateY(-50%) rotate(90deg);
+  }
+
+
+ /* 
+  ==========================================================================
+  3. Responsive tweaks
+  ========================================================================== 
+  */
+
+  @media only screen and (min-width: 768px) {
+    
+    header {
+      height: 70px;
+    }
+
+     #nav-expander {
+      /* width: 110px; */
+      padding-left: 1.25em;
+    }
+    #nav-expander .pixova-menu-text {
+      display: inline-block;
+      line-height: 30px;
+    }
+    #nav-expander .pixova-menu-icon {
+      left: auto;
+      right: .25em;
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+      -o-transform: translateX(0);
+      transform: translateX(0);
+    }
+
+    #pixova-lateral-nav .pixova-navigation {
+      margin: 20px 0;
+    }
+  }

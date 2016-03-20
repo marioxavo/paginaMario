@@ -1,0 +1,573 @@
+/* --- TABLE OF CONTENTS --- */
+/*
+
+1. General tweaks for the app layout
+    1.1 About the app area tweaks.
+    1.2 Footer area tweaks
+    1.3 Off canvas menu tweaks
+    1.4 Owl Carousel tweaks
+2. Responsive fixes
+
+/* --- TABLE OF CONTENTS --- 
+
+
+
+  /* 
+  ==========================================================================
+  1. General tweaks for the app layout
+  ========================================================================== 
+  */
+
+  /* buttons */
+
+  .freelancer .btn-cta-preview{
+    margin-right: 10px;
+  }
+
+  .freelancer .btn-cta-preview i,
+  .freelancer .btn-cta-submit i{
+    margin-right: 10px;
+  }
+
+  .freelancer-work-tags p i{
+    margin-right: 5px;
+  }
+
+  .btn-cta-preview-cv:active{
+    position: relative;
+    top: 2px;
+  }
+
+
+
+  .freelancer .btn-cta-preview, .freelancer .btn-cta-submit{
+    position: relative;
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+  }
+
+  .freelancer .btn-cta-preview:after, .freelancer .btn-cta-submit:after{
+    content: '';
+    height: 100%;
+    width: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all .15s ease-in-out;
+    background: #fff;
+    z-index: 0;
+  }
+
+  .freelancer .btn-cta-preview-cv:after{
+    background: #a30808;
+  }
+
+  .freelancer a.btn-cta-preview-cv:hover{
+    border-color: #a30808;
+    color: #fff;
+  }
+
+  .freelancer .btn-cta-preview span,
+  .freelancer .btn-cta-submit span{
+    position: relative;
+    z-index: 1;
+  }
+
+  .freelancer .btn-cta-preview:hover:after,
+  .freelancer .btn-cta-submit:hover:after{
+    width: 100%;
+  }
+
+  .freelancer .btn-cta-preview:hover{
+    color: #057e63;
+  }
+
+  .freelancer .btn-cta-submit:hover{
+    color: #f16f1e;
+
+  }
+
+  .freelancer .simple-separator{
+    border-color: #e5e5e5;
+    margin: 35px 0px 45px 0;
+  }
+
+
+  .freelancer #nav-expander {display: none;}
+  .freelancer .simple-nav-menu {
+    list-style: none;
+    font-family: 'Muli';
+  }
+
+  .freelancer .simple-nav-menu{
+    margin-top: 5px;
+  }
+
+    .freelancer .simple-nav-menu li {
+    float: left;
+    margin-left: 30px;
+}
+
+    .freelancer .simple-nav-menu li a {
+      transition: all .35s ease;
+      color: #FFF;
+      text-decoration: none;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 15px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+    }
+
+    .freelancer .simple-nav-menu li a:after{
+      transition: all .35s ease;
+      content: '';
+      position: absolute;
+      width: 50%;
+      left: 25%;
+      bottom: 0;
+      height: 2px;
+      background-color: #FFF;
+      opacity: 0;
+    }
+
+    .freelancer .simple-nav-menu li a:hover:after {
+      opacity: .45;
+    }
+
+    .freelancer #header-wrap.smaller{
+      background: #1d1d1d;
+    }
+
+    .freelancer #header-wrap.smaller a:hover{
+      color:#3B69A9;
+    }
+
+    .freelancer #header-wrap.smaller a:hover:after{
+      display: none;
+    }
+
+    .freelancer-intro .intro-content {
+      padding-top: 16%;
+      padding-bottom: 0;
+    }
+
+
+    .freelancer-intro {
+      background-image: url('../images/header-bg.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .freelancer-intro .person img {
+      position: relative;
+      bottom: -3px;
+    }
+
+
+    .freelancer .section-heading {
+      margin-bottom: 0;
+      color: #3b69a9;
+      font-family: 'Muli';
+      line-height: 1.3;
+    }
+
+      .freelancer .section-heading:before {display: none;}
+
+
+      .freelancer .sub-heading {
+        margin-bottom: 35px;
+        color: #2f2f2f;
+      }
+
+      .freelancer #about{
+        padding-bottom: 45px;
+      }
+
+      /* Works */
+
+     #freelancer-works {
+      background-color: #3b69a9;
+      padding: 90px 0;
+     } 
+
+    #header-wrap.smaller a:hover{
+      color: #057e63 !important;
+    }
+
+      #freelancer-works .section-heading,
+      .freelancer #contact .section-heading {color: #FFF;}
+      #freelancer-works .sub-heading,
+      .freelancer #contact .sub-heading {color: #FFF;}
+
+    .freelancer .works-block {
+      margin-bottom: 45px;
+    }
+
+    .freelancer-work-heading a{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 13px;
+      line-height: 20px;
+      color: #fff !important;
+    }
+
+
+
+    .freelancer-work-desc {
+      font-family: 'Muli';
+      font-size: 13px;
+      line-height: 20px;
+    }
+
+
+    .freelancer .works-icon {
+      font-family: 'linea-basic-10';
+      font-size: 42px;
+      line-height: 63px;
+    }
+
+    .freelancer-work img:hover{
+      right: -25px;
+    }
+
+
+    /* Works slider */
+
+    .freelancer-work{
+      height: 246px;
+    }
+
+    .freelancer-work-heading {
+      color: #FFF;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 21px;
+      font-family: 'Montserrat';
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+
+    .freelancer-work-desc {
+      font-family: 'Muli';
+      color: #FFF;
+      font-size: 13px;
+      line-height: 20px;
+      margin-bottom: 35px;
+    }
+
+    .freelancer-work-tags p {
+    border: 2px solid #FFF;
+    color: #FFF;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 12px 20px;
+    margin-bottom: 15px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+  #freelancer-works .owl-controls{
+    padding-top: 25px;
+    padding-left: 15px;
+    width: 1170px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .freelancer #clients .owl-controls{
+    padding-top: 35px;
+  }
+
+  #freelancer-clients{
+    padding-top: 40px;
+  }
+
+
+  #freelancer-works .owl-controls span,
+  .freelancer #clients .owl-controls span{
+    margin: 0;
+    margin-right: 10px;
+    background: transparent;
+  }
+
+  #freelancer-works .owl-controls span{
+    border: 2px solid white;
+  }
+
+  .freelancer #clients .owl-controls span{
+    border: 2px solid #cacaca;
+
+  }
+
+  #freelancer-works .owl-controls .active span{
+    background: white;
+  }
+
+  .freelancer #clients .owl-controls .active span{
+    background: #cacaca;
+  }
+
+    .freelancer-work img{
+      position: absolute;
+      right: 0;
+      top: -100%;
+    }
+
+    .freelancer #contact .contact-form-incol{
+      padding-left: 0;
+    }
+
+    .freelancer #contact label.error{
+      left: 0;
+    }
+
+    #freelancer-works .owl-carousel .owl-wrapper-outer {
+      overflow: visible;
+    }
+
+    .freelancer .single-project-intro:after, .freelancer.thank-you:after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(5,126,99,.8);
+    }
+
+   
+    /* Clients slider */
+
+    .freelancer #clients{
+      padding: 90px 0;
+    }
+
+    .clients-image {
+      max-height: 125px;
+      height: 80px;
+      margin-bottom: 35px;
+
+    }
+      .clients-image img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+      }
+
+
+    .clients-text {
+      font-family: 'Muli';
+      font-size: 13px;
+      line-height: 20px;
+      padding: 0 10%;
+    }
+
+
+    /* Contact */
+
+    /* placeholders */
+    ::-webkit-input-placeholder {
+       color: #FFF;
+    }
+
+    :-moz-placeholder { /* Firefox 18- */
+       color: #FFF;  
+    }
+
+    ::-moz-placeholder {  /* Firefox 19+ */
+       color: #FFF;  
+    }
+
+    :-ms-input-placeholder {  
+       color: #FFF;  
+    }
+    
+
+    .freelancer #contact .input-wrapper i.fa {
+      color: #FFF;
+    }
+
+      .freelancer #contact input:focus,
+      .freelancer #contact textarea:focus{
+        background: rgba(255,255,255,.15);
+        border: 2px solid rgba(255,255,255,.85);
+      }
+
+    .freelancer #contact {
+      background-image: url('../images/footer-bg.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .freelancer #contact .contact-form-field {
+      outline: none;
+      border: 2px solid #FFF;
+      border-radius: 5px;
+    }
+
+    .footer-app-social-icons {
+                line-height: 65px;
+            }
+
+            .freelancer .footer-app-social-icons{
+              float: right;
+            }
+
+          /* hover colored on social icons */
+
+
+           .freelancer .footer-app-social-icons .fa-facebook:hover{
+            background: #38599a;
+            border-color: #38599a;
+           }
+
+           .freelancer .footer-app-social-icons .fa-twitter:hover{
+            background: #00aeee;
+            border-color: #00aeee;
+           }
+
+           .freelancer .footer-app-social-icons .fa-rss:hover{
+            background: #ff9845;
+            border-color: #ff9845;
+           }
+
+           .freelancer .footer-app-social-icons .fa-pinterest:hover{
+            background: #fe4445;
+            border-color: #fe4445; 
+           }
+
+           .freelancer .footer-app-social-icons .fa-wordpress:hover{
+            background: #5383e9;
+            border-color: #5383e9;
+           }
+
+           .freelancer .footer-app-social-icons .fa-dribbble:hover{
+            background: #eb4b89;
+            border-color: #eb4b89;
+           }
+
+
+           .footer-app-social-icons .fa {
+              color: #FFF;
+              font-size: 12px;
+              border: 2px solid #FFF;
+              border-radius: 35px;
+              width: 32px;
+              height: 32px;
+              text-align: center;
+              line-height: 28px;
+              margin-left: 4px;
+          }
+          .footer-app-social-icons a{
+            opacity: .55;
+          }
+           .footer-app-social-icons a:hover{
+            opacity: 1;
+           }
+            
+            .app .footer-descr{
+              color: #fff;
+            }
+
+            .freelancer #footer{
+              background-color: #2d2d2d;
+              color: #fff;
+            }
+
+            .freelancer .logo-footer{
+              color: #fff;
+            }
+
+            .freelancer #footer {
+                padding: 50px 0px 30px;
+                background-color: #282829;
+                box-shadow: inset 0px 5px 15px rgba(0,0,0,0.15);
+            }
+
+            .freelancer ul.mobile-nav a:hover{
+              background-color: #057e63;
+            }
+
+
+    /* Off canvas mobile */
+    .freelancer .offset-canvas-mobile {
+      background-color: #EEE;
+      color: #1d1d1d;
+    }
+
+    .freelancer .close-btn::before, .freelancer .close-btn::after {background-color: #000;}
+    .freelancer .mobile-nav a {color: #1d1d1d;}
+      .freelancer .mobile-nav a:focus,
+      .freelancer .mobile-nav a:hover {color: #FFF;}
+
+    /* Responsive */
+
+    @media (max-width: 1366px){
+      div.freelancer-work img{
+          top: -68%;
+          height: 600px;
+      }
+    }
+
+    @media (max-width: 1024px){
+      div.freelancer-work img{
+          display: none;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .freelancer .intro-content {
+        padding-top: 150px;
+      }
+
+      .freelancer-work{
+        height: auto;
+      }
+
+      .person,
+      .pixova-product-intro{
+        text-align: center;
+      }
+
+      #footer, 
+      .freelancer .footer-app-social-icons{
+        float: none;
+        text-align: center;
+      }
+
+      .btn-cta-preview{
+        margin-bottom: 10px;
+      }
+
+      #freelancer-works .owl-controls{
+        text-align: center;
+        width: 100%;
+      }
+
+      .freelancer-work{
+        text-align: center;
+      }
+    }
+
+
+    @media (max-width: 640px) {
+      .freelancer #nav-expander {
+        display: block;
+      }
+
+      .freelancer #pixova-regular-menu {
+        display: none;
+      }
+
+      .freelancer .person {display: none;}
+      .freelancer .intro-content {padding-bottom: 50px;}
+
+    }
